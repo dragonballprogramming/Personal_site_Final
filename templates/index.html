@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Kyle's Portfolio</title>
+        <!--favicon-->
+        <link rel="shortcut icon" type="image/jpg" href="../static/img/favicon.ico"/>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+          <!-- CSS Stylesheets -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="../static/styles.css" rel="Stylesheet">
+       <!-- Bootstrap Scripts -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+         <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    </head>
+    {% include 'header.html' %}
+    <body>
+<!--    Title-->
+        <section id="title">
+            <div>
+                <div class="container-fluid top_div" id="animate-area">
+                    <div class="">
+                        <h1>Welcome, My name is Kyle</h1>
+                        <h2>A <u>Pro</u>grammer.</h2>
+                        <div class="links_top">
+                            <button onclick="location.href='projects'">Projects <img src="../static/img/python_symbol.jpg" height="15" width="15"></button>
+                            <button onclick="location.href='#contact_me'">Contact Me 📩 </button>
+                            <button onclick="location.href='https://blog-kyle.herokuapp.com/'">Blog 💬</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!--  about me -->
+        <section id="about_me">
+            <div id="aboutmecarousel" class="carousel slide" data-ride="false">
+                <ol class="carousel-indicators">
+                    <li data-target="#aboutmecarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#aboutmecarousel" data-slide-to="1"></li>
+                    <li data-target="#aboutmecarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <h2 class="about_me-text">I am a Colorado Native, born and raised. Click left if you would like to see my hobbies</h2>
+                        <img class="about_me-image about_me-picture" src="../static/img/my_face.png" alt="man-profile">
+                        <em>That's me</em>
+                    </div>
+                    <div class="carousel-item">
+                        <h2>Me and my son love to go fishing no matter the weather, how many fish we catch or how big they are. It's just good to be outside.</h2>
+                        <img class="about_me-picture" src="../static/img/pax_fishing.jpeg" alt="fishing-profile">
+                        <em>Fishing</em>
+                    </div>
+                    <div class="carousel-item">
+                        <h2>I picked up archery about 5 years ago and fell in love with it. It is a skill that always keeps teaching.</h2>
+                        <img class="about_me-picture" src="../static/img/archer.png" alt="archery-profile">
+                        <em>Archery</em>
+                    </div>
+                    <div class="carousel-item">
+                        <h2>I picked up archery about 5 years ago and fell in love with it. It is a skill that always keeps teaching.</h2>
+                        <img class="about_me-picture" src="../static/img/cooking-pic.jpg" alt="food-profile">
+                        <em>Cooking</em>
+                    </div>
+                 </div>
+              <a class="carousel-control-prev carousel-button" href="#aboutmecarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="False"></span>
+                <span class="sr-only">Previous</span>
+                  <p> Previous </p>
+              </a>
+              <a class="carousel-control-next carousel-button" href="#aboutmecarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon carousel-button" aria-hidden="False"></span>
+                <span class="sr-only carousel-button">Next</span>
+                  <p> Next </p>
+              </a>
+            </div>
+        </section>
+<!--        THis is where my different projects will go I will start with just a couple I did for the class-->
+    <section id="projects-link">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto project-head">
+              <h2 class="project-head"><a href="{{ url_for('projects') }}" class="project-head">My Projects</a></h2>
+              <hr>
+              <p>Come check out what I have been working on.</p>
+              <button onclick="location.href='projects'" class="project-head">Projects <img src="../static/img/python_symbol.jpg" height="40" width="40"></button>
+          </div>
+        </div>
+      </div>
+        <hr>
+
+    </section>
+    <!--contact me -->
+    <div class="flex-container container-fluid row">
+         <div class="container flex-child col-lg-6" id="contact_me">
+            <h2>Contact Me</h2>
+            <form method="POST" action="{{ url_for('home') }}">
+                {{ form.csrf_token }}
+                <p>
+                    {{ form.name.label }}
+                    <br>
+                    {{ form.name }}
+                </p>
+                <p>
+                    {{ form.email.label }}
+                    <br>
+                    {{ form.email(size=30) }}
+                </p>
+                <p>
+                    {{ form.message.label }}
+                    <br>
+                    {{ form.message }}
+                </p>
+                {{ form.submit }}
+            </form>
+        </div>
+        <div class="flex-child pitch col-lg-6">
+            <h2>Looking for a coder?</h2>
+            <p>I have been learning to code for the past 2 years.
+                During that time I have done several online coding bootcamps focusing primaraly on backend development with python coding using Flask.
+                Currently, I have been working on my own original projects using my own code. I have several websites I have published showing my skills in
+                sQl databases, api use including Google Maps api, along with data science using Juniper.
+                It is my goal to become a professional programmer. If you are interested in finding a coder who is willing
+                to go the extra mile and open to learning new things, while being confident in their current skill level please
+                fill out the form on the left, and I will get back to you as soon as possible.
+            </p>
+        </div>
+    </div>
+
+    </body>
+{% include 'footer.html' %}
+</html>
