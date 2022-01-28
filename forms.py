@@ -7,7 +7,7 @@ Form = FlaskForm
 
 class ContactForm(Form):
     name = TextField("Full Name", validators=[input_required('Please enter your name.')])
-    email = StringField(label='Email', validators=[DataRequired(), Email()])
+    email = StringField(label='Email', validators=[DataRequired()])
     message = TextAreaField(label='Please enter a brief discription of the project')
     submit = SubmitField(label="Submit")
 
